@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExampleApp.Views.SettingPage"
+             Title="{Binding Title}"
+             xmlns:vm="clr-namespace:ExampleApp.ViewModels"
+             x:Name="SettingsPage"
+             x:DataType="vm:SettingsViewModel">
+
+  <ContentPage.BindingContext>
+    <vm:SettingsViewModel />
+  </ContentPage.BindingContext>
+
+  <ScrollView>
+    <Grid Padding="12" ColumnDefinitions="{OnIdiom Tablet='Auto,*,Auto', Default='.05*,.9*,.05*'}">
+
+      <StackLayout Grid.Column="1">
+        <Label FontSize="15" FontAttributes="Bold" Text="BASIC PROPERTIES" TextColor="Black"/>
+        <Frame BackgroundColor="Transparent">
+          <Grid ColumnDefinitions="300,*"
+                ColumnSpacing="10"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                RowSpacing="10">
+
+            <Label Grid.Row="2" Grid.Column="0" FontSize="15" TextColor="Black" Text="Name:"/>
+            <Entry Grid.Row="2" Grid.Column="1" TextColor="Black" Text="{Binding SettingValue}" Keyboard="Text" 
+                   FontSize="15"
+                   WidthRequest="100" 
+                   HorizontalTextAlignment="Center"></Entry>
+          </Grid>
+        </Frame>
+      </StackLayout>
+    </Grid>
+  </ScrollView>
+</ContentPage>
