@@ -1,9 +1,4 @@
 ﻿using ExampleApp.Views;
-using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace ExampleApp.ViewModels
